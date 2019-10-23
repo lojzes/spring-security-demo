@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <link href="@{css/styles.css}" rel="stylesheet"/>
+    <title>login-mobile</title>
+</head>
+<body>
+     <p th:text="${msg}"></p>
+       <form th:action="@{/sys/mobile}" method="post">
+           <p>
+               <label for="mobile">mobile</label>
+               <input type="text" id="mobile" name="mobile"/>
+           </p>
+           <button type="submit" class="btn">Login</button>
+       </form>
+</body>
+</html>
