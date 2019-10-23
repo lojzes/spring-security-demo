@@ -25,10 +25,6 @@ public class MobileAuthenticationProvider implements AuthenticationProvider {
 
     UserDetails userDetails = sysDetailsService.loadUserByMobile(mobile);
 
-    if (null == userDetails) {
-      throw new UsernameNotFoundException("用户不存在");
-    }
-
     MobileAuthenticationToken mobileAuthenticationToken =
         new MobileAuthenticationToken(mobile, userDetails.getAuthorities());
     return mobileAuthenticationToken;

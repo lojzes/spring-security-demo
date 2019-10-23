@@ -26,9 +26,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   private SysSimpleUrlAuthenticationFailureHandler sysSimpleUrlAuthenticationFailureHandler;
 
   @Autowired private MyLogoutSuccessHandlerOne myLogoutSuccessHandler;
-  @Autowired
-  private SysUserDetailService sysUserDetailService;
-
+    @Autowired
+    private SysUserDetailService sysUserDetailService;
 
   //  @Override
   //  @Bean
@@ -46,8 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http.authorizeRequests()
-        .antMatchers(
-                "/sys/**")
+            .antMatchers("/sys/**")
         .permitAll()
         .antMatchers("/admin/**")
         .hasRole("ADMIN")
@@ -72,16 +70,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     //  .deleteCookies(cookieNamesToClear)
 
     http.csrf().disable();
+
+      http.apply(MobileSecurityConfigurerAdapter());
   }
 
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(sysAuthenticationProvider);
+      auth.authenticationProvider(sysAuthenticationProvider);
   }
 
   @Bean
-   public MobileSecurityConfigurerAdapter MobileSecurityConfigurerAdapter(){
-    MobileSecurityConfigurerAdapter mobileSecurityConfigurerAdapter =  new MobileSecurityConfigurerAdapter();
+  public MobileSecurityConfigurerAdapter MobileSecurityConfigurerAdapter() {
+      MobileSecurityConfigurerAdapter mobileSecurityConfigurerAdapter =
+              new MobileSecurityConfigurerAdapter();
     mobileSecurityConfigurerAdapter.setSysUserDetailService(sysUserDetailService);
       return mobileSecurityConfigurerAdapter;
   }
