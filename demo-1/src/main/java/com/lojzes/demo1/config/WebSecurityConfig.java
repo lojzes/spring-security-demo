@@ -70,7 +70,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     //  .deleteCookies(cookieNamesToClear)
 
     http.csrf().disable();
-
       http.apply(MobileSecurityConfigurerAdapter());
   }
 
