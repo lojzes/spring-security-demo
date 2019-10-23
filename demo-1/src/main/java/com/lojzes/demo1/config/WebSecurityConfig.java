@@ -70,7 +70,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     //  .deleteCookies(cookieNamesToClear)
 
     http.csrf().disable();
-      http.apply(MobileSecurityConfigurerAdapter());
+      http.apply(mobileSecurityConfigurerAdapter());
   }
 
   @Override
@@ -79,7 +79,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   }
 
   @Bean
-  public MobileSecurityConfigurerAdapter MobileSecurityConfigurerAdapter() {
+  public MobileSecurityConfigurerAdapter mobileSecurityConfigurerAdapter() {
       MobileSecurityConfigurerAdapter mobileSecurityConfigurerAdapter =
               new MobileSecurityConfigurerAdapter();
     mobileSecurityConfigurerAdapter.setSysUserDetailService(sysUserDetailService);
