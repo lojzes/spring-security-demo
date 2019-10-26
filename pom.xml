@@ -11,6 +11,7 @@
     <modules>
         <module>demo-1</module>
         <module>oauth2-client</module>
+        <module>spring-boot</module>
     </modules>
 
 

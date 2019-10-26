@@ -1,0 +1,17 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+logging:
+  level:
+    org:
+      springframework: debug
+
+
+spring:
+  data:
+    rest:
+      base-path: /application
