@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <link href="@{css/styles.css}" rel="stylesheet"/>
+    <title>user-info</title>
+</head>
+<body>
+<h3>欢迎</h3>
+
+<p th:text="${accessToken}"></p>
+<p th:text="${tokenType}"></p>
+<p th:text="${principal}"></p>
+
+</body>
+</html>

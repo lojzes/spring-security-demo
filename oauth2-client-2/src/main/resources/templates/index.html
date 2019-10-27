@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <link href="@{css/styles.css}" rel="stylesheet"/>
+    <title>index</title>
+</head>
+<body>
+<h3>欢迎</h3>
+
+<p th:text="${cliend_id}"></p>
+<p th:text="${cliend_name}"></p>
+<p th:text="${scopes}"></p>
+
+<a href="https://github.com/login/oauth/authorize?client_id=e0f8275c33d525ef8a3d&redirect_uri=http://i2ijwn.natappfree.cc/oauth/test&scope=user">github</a>
+
+</body>
+</html>
