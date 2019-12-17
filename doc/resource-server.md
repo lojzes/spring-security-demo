@@ -1,8 +1,19 @@
    
-    resource server 认证流程
    
+    login username password 登录：
+ 
+          TokenEndpoint
+	        ResourceOwnerPasswordTokenGranter
+		                   UsernamePasswordAuthenticationToken
+	        DaoAuthenticationProvider.authenticate
+		   PigxUserDetailsService.loadUserByUsername
+  
+
+    token 访问接口
+
      ResourceServerSecurityConfigurer
-        OAuth2AuthenticationProcessingFilter
+           OAuth2AuthenticationProcessingFilter
+
          PreAuthenticatedAuthenticationToken authentication 
          OAuth2AuthenticationManager.authenticate(Authentication authentication)
      
@@ -17,3 +28,7 @@
                 RedisTokenStore.readAuthentication(tokenValue)  auth:tokenValue
      
              OAuth2Authentication authentication
+             
+             
+             //配置属性
+             ResourceServerTokenServicesConfiguration
